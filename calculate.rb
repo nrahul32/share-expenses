@@ -1,5 +1,4 @@
 require_relative 'calculator'
-require 'pry'
 
 include Calculator
 
@@ -29,9 +28,11 @@ Calculator.summarize(gang)
 # jon, dany, 100
 # jon, arya, 50
 # arya, jamie, 20
+# jamie, cercie, 20
 #
 # jon gets 150
 # dany gives 100
 # arya gives 30
-# jamie gives 20
+# jamie - settled
+# cercie gives 20
 ########################

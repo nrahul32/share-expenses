@@ -24,6 +24,8 @@ module Calculator
 				puts gang[name].name + " gets " + gang[name].balance.abs.to_s
 			elsif gang[name].balance > 0
 				puts gang[name].name + " gives " + gang[name].balance.to_s
+			else
+				puts gang[name].name + " - settled"
 			end
 		end
 	end
