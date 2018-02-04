@@ -7,30 +7,25 @@ names = []
 gang = {}
 a = nil
 
-puts "Enter list of names(comma separated) of those would like to share the expenses:"
-names = gets.split(/, */)
-names[-1].chomp!
-
-names.each { |k| gang[k] = Friend.new(k) }
-
-puts "Enter the expenses in the format: FROM, TO, AMOUNT:"
+puts "Enter the list of transactions in the format: FROM, TO, AMOUNT:"
 
 loop do
 	a = gets.split(/, */)	# handle tabs
 	break if a.length == 1
+	gang[a[0]] = Friend.new(a[0]) if gang[a[0]].nil?
+	gang[a[1]] = Friend.new(a[1]) if gang[a[1]].nil?
 	gang[a[0]].gives_to(gang[a[1]],a[2].to_i)
 end
 
-Calculator.summary(gang)
+Calculator.summarize(gang)
 
 
 ########################
-# Command: ruby calculate.rb
+# Usage
 #
+# Command: ruby calculate.rb
 # Output:
-# Enter list of names(comma separated) of those would like to share the expenses:
-# jon, dany, arya, jamie
-# Enter the expenses in the format: FROM, TO, AMOUNT:
+# Enter the list of transactions in the format: FROM, TO, AMOUNT:
 # jon, dany, 100
 # jon, arya, 50
 # arya, jamie, 20

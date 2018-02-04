@@ -18,7 +18,7 @@ module Calculator
 		end
 	end
 
-	def summary(gang)
+	def summarize(gang)
 		gang.keys.each do |name|
 			if gang[name].balance < 0
 				puts gang[name].name + " gets " + gang[name].balance.abs.to_s
