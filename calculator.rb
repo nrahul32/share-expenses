@@ -17,4 +17,14 @@ module Calculator
 			@balance = @balance + amount
 		end
 	end
+
+	def summary(gang)
+		gang.keys.each do |name|
+			if gang[name].balance < 0
+				puts gang[name].name + " gets " + gang[name].balance.abs.to_s
+			elsif gang[name].balance > 0
+				puts gang[name].name + " gives " + gang[name].balance.to_s
+			end
+		end
+	end
 end
